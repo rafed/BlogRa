@@ -1,0 +1,18 @@
+<footer class="text-center py-5">
+    <p>
+        {{ with .Site.Params.footer }}
+            {{ . }}
+        {{ else }}
+        © 2021 <a href="https://rafed.github.io/" target="_blank">DevRa</a>.
+        <a href="https://github.com/rafed/BlogRa/" target="_blank">BlogRa</a> theme for
+        <a href="https://github.com/gohugoio/hugo/" target="_blank">
+            Hugo
+        </a>. 
+        {{ end }}
+    </p>
+</footer>
+
+{{ with .Site.Params.GoogleSearch }}
+<script async src="https://cse.google.com/cse.js?cx={{ . }}"></script>
+<gcse:searchresults-only></gcse:searchresults-only>
+{{ end }}

@@ -1,0 +1,24 @@
+{{ if .IsHome }}
+<meta name="description" content="{{ .Site.Params.Description }}">
+
+{{ else if eq .Kind "taxonomy" }}
+<meta name="description" content="Collection of all articles related to {{ .Title }}">
+
+{{ else if eq .Kind "taxonomyTerm" }}
+<meta name="description" content="Collection of all tags in {{ .Site.Title }}">
+
+{{ else if eq .Kind "section"}}
+<meta name="description" content="Collection of all articles in section- {{ .Title | humanize }}">
+
+{{ else }}
+<meta name="description" content="
+    {{ with .Description }}{{ . }}
+    {{ else }}{{ with .Summary }}{{ . }}
+    {{ else }}{{ .Site.Params.description }}
+    {{ end }}{{ end }}
+">
+{{ end }}
+
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+{{ template "_internal/schema.html" . }}

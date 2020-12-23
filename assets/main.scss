@@ -1,0 +1,115 @@
+$dark: #151515;
+
+// Dropdown stuff
+$dropdown-bg:                       $dark;
+$dropdown-link-color:               rgba(255,255,255,.55);
+$dropdown-link-hover-color:         rgba(255,255,255,.75);
+$dropdown-link-hover-bg:            $dark;
+$dropdown-divider-bg:               rgba(255,255,255,.55);
+
+// Pagination stuff
+$pagination-color:                  rgb(60, 60, 60);
+$pagination-hover-color:            $dark;
+$pagination-active-bg:              rgb(60, 60, 60);
+
+@import "bootstrap.scss";
+
+$fa-font-path: "fonts/";
+@import "fontawesome-free-5.15.1-web/scss/fontawesome.scss";
+@import "fontawesome-free-5.15.1-web/scss/solid.scss";
+@import "fontawesome-free-5.15.1-web/scss/brands.scss";
+
+@font-face {
+    font-family: 'AlfaSlabOne';
+    src: url('fonts/AlfaSlabOne-Regular.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
+@import "header.scss";
+@import "footer.scss";
+@import "featured.scss";
+@import "suggestions.scss";
+@import "blog-content.scss";
+
+.bg-offwhite {
+    background-color: #f2f2f2;
+}
+
+.section-title {
+    margin-top: 1.5rem;
+    text-align: center;
+
+    a {
+        color: #212529;
+        text-decoration: none;
+
+        &:hover {
+            color: #212529;
+            text-decoration: underline;
+        }
+    }
+}
+
+.tags {
+    font-size: 0.9rem;
+
+    a {
+        text-decoration: none;
+    }
+
+    .tag {
+        display: inline-block;
+        margin: 0 2px 6px 2px;
+        padding: 0.2rem 1rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        color: white;
+    }
+
+    .tag:hover {
+        text-decoration: 1px solid white underline;
+    }
+}
+
+.date {
+    font-weight: 600;
+}
+
+.pagination {
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+}
+
+#social-media-share {
+    margin: 3rem auto;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        display: inline-block;
+    }
+}
+
+// Override Google CSE styles
+#___gcse_0 {
+    .gsc-control-cse {
+        padding: 0 !important;
+        border: 0 !important;
+        
+        &::after {
+            content: none !important;
+        }
+    }
+}
+
+.mermaid {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+main {
+    min-height: 70vh;
+}

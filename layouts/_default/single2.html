@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<main class="blog-content">
+    <div class="container-md">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 px-lg-4">
+                <h1 class="title">{{ .Title | title }}</h1>
+
+                {{ with .Page.Params.image }}
+                <figure>
+                    {{ $image := $.Page.Resources.GetMatch . }}
+                    <img src={{ $image.RelPermalink }} alt="{{ $.Title }}">
+                </figure>
+                {{ end }}
+
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</main>
+
+{{ end }}

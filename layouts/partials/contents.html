@@ -1,0 +1,24 @@
+<ul class="list-group list-group-flush">
+    {{ range .Site.RegularPages.ByPublishDate.Reverse }}
+
+    <li class="list-group-item d-flex justify-content-between  px-0">
+
+        <a href="{{ .RelPermalink }}" class="summary-vertical">
+            <strong>{{ .Title }}</strong>
+        </a>
+
+        <div>
+        <!-- <span class="badge bg-success rounded-pill">
+            {{ $time := math.Round (div (countwords .Content) 220.0) }}
+            {{ $time }} min
+        </span> -->
+        <span class="badge bg-primary rounded-pill">
+            {{- .Date.Format "Jan 2, 2006" }}
+        </span>
+        <!-- <span>{{ .Summary }}</span> -->
+    </div>
+
+    </li>
+
+    {{ end }}
+</ul>

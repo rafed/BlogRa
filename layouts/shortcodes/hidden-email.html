@@ -1,0 +1,34 @@
+<script>
+function emailRevealer(){
+    var buttonText = document.getElementById("button-text");
+    buttonText.innerText = "";
+    
+    var spinner = document.getElementById('spinner');
+    spinner.classList.add("spinner-border", "spinner-border-sm");
+
+    function displayEmail() {
+        {{ with .Site.Params.ContactEmail }}
+            var text = "{{ . }}"
+        {{ else }}
+            var text = "Define your contact email in config.toml to display here."
+        {{ end }}
+
+        var emailDisplay = document.getElementById("email-display");
+        emailDisplay.innerText = text
+
+        spinner.classList.remove("spinner-border", "spinner-border-sm");
+        buttonText.innerText = "Click me";
+    }
+
+    setTimeout(displayEmail, 2000);
+}
+</script>
+
+<p>
+<button class="btn btn-dark" type="button" onclick="emailRevealer();">
+    <span id="spinner" role="status" aria-hidden="true"></span>
+    <span id="button-text">Click me</span>
+</button> to reveal my email.
+</p>
+
+<h3 id="email-display"></h3>

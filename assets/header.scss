@@ -1,0 +1,137 @@
+#header {
+    padding-top: 26px;
+    background-color: $dark;
+    text-align: center;
+
+    .top-bar {
+        .navburger {
+            color: white;
+        }
+
+        .title {
+            margin-bottom: 0;
+            font-size: 2.5rem;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-family: 'AlfaSlabOne';
+                margin: 0;
+            }
+        }
+        
+        .social-buttons {
+            text-align: left;
+            font-size: 20px;
+
+            ul {
+                margin: 0;
+                padding-left: 0;
+                list-style-type: none;
+
+                li {
+                    display: inline-block;
+                    margin: 3px;
+
+                    a {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+
+        .ra-toggler {
+            // text-align: left;
+            padding: 0;
+
+            button {
+                color: white;
+                border: 0;
+            }
+        }
+
+        .search-bar {
+            text-align: right;
+            
+
+            *:focus {
+                border-color: none;
+                box-shadow: none;
+            }
+
+            i {
+                font-size: 1.3rem;
+            }
+
+            input {
+                width: 50%;
+                border: 0px;
+                border-radius: 0;
+                background-color: $dark;
+                color: white;
+
+                &::placeholder {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    color: white;
+                    text-align: right;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+
+                &:focus {
+                    border-bottom: 1px solid white;
+
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+
+            button {
+                color: rgb(196, 196, 196);
+
+                &:hover {
+                    color:white;
+                }
+            }
+        }
+    }
+
+    
+    nav {
+        ul {
+            li {
+                padding: 0 2rem;
+            }
+        }
+
+        .social-buttons {
+            padding-left: 0;
+            text-align: center;
+
+            ul {
+                padding-left: 0;
+
+                li {
+                    display: inline-block;
+                    margin: 3px;
+                    padding: 0.5rem;
+
+                    a {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+
+        button {
+            color: rgb(196, 196, 196);
+
+            &:hover {
+                color:white;
+            }
+        }
+    }
+}

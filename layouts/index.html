@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<div id="featured">
+    <div class="container-md">
+        <div class="row">
+            <div class="featured-posts">
+                {{ $featured := first 3 (where .Site.RegularPages.ByPublishDate.Reverse ".Section" "in" (slice "posts" "sections")) }}
+                {{ range $i, $feat:=  $featured }}
+                {{ partial "featured-post.html" (dict "context" . "index" $i) }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-offwhite py-5">
+    <div class="container-md">
+        <div class="row">
+            {{/* $filteredPosts := where (where .Site.Pages "Type" "blog") "UniqueID" "!= ".UniqueID }}
+            {{ $relatedPosts := shuffle $filteredPosts | first 3 */}}
+
+            {{ $allPosts := where .Site.RegularPages ".Section" "in" (slice "posts" "sections") }}
+            {{ $randomPosts := shuffle $allPosts | first 6 }}
+            {{ $randomPosts := $randomPosts.ByDate.Reverse }}
+
+            {{ range $randomPosts }}
+            {{ partial "suggestion.html" . }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ if gt .Sections 0 }}
+<div class="bg-offwhite pb-5 pt-1">
+    <div class="container-md">
+        <h2 class="section-title">
+            <a href={{ "/sections/" | relURL }}>Sections</a>
+        </h2>
+
+        <div class="row">
+            {{ $allPages := where .Site.Pages "Section" "sections" }}
+            {{ $contentPages := where .Site.RegularPages "Section" "sections" }}
+
+            {{ $sections := symdiff $allPages $contentPages }}
+            {{ $randomSections := shuffle $sections | first 3 }}
+
+            {{ range $randomSections }}
+                {{ if ne .Title "Sections" }}
+                {{ partial "suggestion-section.html" . }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+
+
+{{ end }}

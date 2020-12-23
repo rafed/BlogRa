@@ -1,0 +1,42 @@
+<title>
+    {{ if not .IsHome }}
+    {{ with .Title | title }}{{ . }} | {{ end }}
+    {{ end }}
+    {{ .Site.Title }}
+</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="{{ .Permalink }}" />
+<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}image/favicon.ico">
+
+{{ partial "seo.html" . }}
+
+<!-- COMPILE CSS -->
+{{ $style := resources.Get "main.scss" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- BUNDLE JAVASRIPT -->
+{{ $bootstrap_js := resources.Get "bootstrap-5.0.0/dist/js/bootstrap.bundle.min.js" }}
+{{ $js := resources.Get "main.js" | minify }}
+{{ $bundle := slice $bootstrap_js $js | resources.Concat "bundle.js" }}
+<script src="{{ $bundle.RelPermalink }}"></script>
+
+
+<!-- EXTERNAL THINGS -->
+<!-- Google search is in FOOTER -->
+
+<!-- Google adsense -->
+{{ if .Site.Params.adsense }}
+<script data-ad-client="{{ .Site.Params.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{{ end }}
+
+<!-- Katex math equations -->
+{{ if or .Params.math .Site.Params.math }}
+{{ partial "math.html" . }}
+{{ end }}
+
+<!-- Mermaid diagrams -->
+{{ if or .Params.mermaid .Site.Params.mermaid }}
+{{ partial "mermaid.html" . }}
+{{ end }}

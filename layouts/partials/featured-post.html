@@ -1,0 +1,37 @@
+{{ if .context.Params.image }}
+<!-- This is a workaround for a Hugo bug -->
+{{ $image := $.context.Page.Resources.Match (.context.Params.image) }}
+{{ $image := index $image 0 }}
+
+<div class="grid-item grid-item-{{ add .index 1 }}" 
+    style="background-image:url('{{ $image.RelPermalink }}')">
+{{ else }}
+<div class="grid-item grid-item-{{ add .index 1 }}" 
+    style="background-image:url('')">
+{{ end }}
+    <div class="content">
+        <div class="tags">
+            {{ range .context.Params.tags }}
+            <a class="tag bg-dark" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </div>
+
+        <!-- If index 0 then h1, otherwise h2 (Cause SEO reasons) -->
+
+        {{ if eq .index 0 }}
+        <h1><a class="link-title" href="{{ .context.RelPermalink }}">
+                {{ .context.Title }}
+            </a></h1>
+        {{ else }}
+        <h2><a class="link-title" href="{{ .context.RelPermalink }}">
+            {{ .context.Title }}
+        </a></h2>
+        {{ end }}
+
+        <div class="low-tab">
+            {{ partial "date.html" .context.Date }}
+            &nbsp; <b>&centerdot;</b> &nbsp;
+            {{ partial "time-to-read.html" .context}}
+        </div>
+    </div>
+</div>

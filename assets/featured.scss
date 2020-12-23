@@ -1,0 +1,168 @@
+#featured {
+    background-color: $dark;
+    padding-top: 1rem;
+}
+
+.featured-posts {
+    display: grid;
+    background-color: white;
+    background-clip: content-box;
+
+    ::after {
+        background-color: $dark;
+    }
+
+    .grid-item::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .5;
+        transition: all 0.4s ease-in-out;
+        background-color: $dark;
+    }
+
+    .grid-item:hover::before {
+        opacity: 0.8;
+    }
+
+    .grid-item {
+        box-shadow: inset 0px 0px 140px 0.1px $dark;
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        position: relative;
+
+
+        .content {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            display: block;
+
+            .link-title {
+                color: white;
+                text-decoration: none;
+            }
+
+            .link-title:hover {
+                text-decoration: 1px solid white underline;
+            }
+
+            .low-tab {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (max-width:767px) {
+        .grid-item {
+            height: 370px;
+
+            .content {
+                bottom: 2.5rem;
+                padding: 0 6% 0 1.5rem;
+
+                h2 {
+                    font-size: 1.6rem;
+                }
+
+                .low-tab {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .grid-item-3 {
+            display: none;
+        }
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 767px) and (max-width:992px){
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 400px 250px;
+
+        .grid-item-1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            .content {
+                bottom: 4rem;
+                padding: 0 10% 0 3rem;
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .low-tab {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .grid-item-2, .grid-item-3 {
+            .content {
+                bottom: 2.2rem;
+                padding: 0 10% 0 1.5rem;
+
+                h2 {
+                    font-size: 1.3rem;
+                }
+
+                .low-tab {
+                    font-size: 0.8rem;
+                }
+
+                .tags {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+        grid-template-columns: 2fr 1fr;
+
+        .grid-item-1 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            height: 564px;
+
+            .content {
+                bottom: 6rem;
+                padding: 0 10% 0 4rem;
+
+                h2 {
+                    font-size: 2.3rem;
+                }
+            }
+        }
+
+        .grid-item-2, .grid-item-3 {
+            .content {
+                bottom: 2.4rem;
+                padding: 0 10% 0 2rem;
+
+                .tags {
+                    font-size: 0.8rem;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                .low-tab {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}

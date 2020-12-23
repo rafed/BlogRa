@@ -1,0 +1,48 @@
+// all bootstrap
+// @import "bootstrap-5.0.0/scss/bootstrap";
+
+// These are compulsory
+@import "bootstrap-5.0.0/scss/functions";
+@import "bootstrap-5.0.0/scss/variables";
+@import "bootstrap-5.0.0/scss/mixins";
+@import "bootstrap-5.0.0/scss/utilities";
+
+@import "bootstrap-5.0.0/scss/root";
+@import "bootstrap-5.0.0/scss/reboot";
+@import "bootstrap-5.0.0/scss/type";
+
+
+// These are optional
+@import "bootstrap-5.0.0/scss/images"; ////
+@import "bootstrap-5.0.0/scss/containers";
+@import "bootstrap-5.0.0/scss/grid";
+// @import "bootstrap-5.0.0/scss/tables";
+@import "bootstrap-5.0.0/scss/forms";
+@import "bootstrap-5.0.0/scss/buttons";
+@import "bootstrap-5.0.0/scss/transitions";
+@import "bootstrap-5.0.0/scss/dropdown";
+@import "bootstrap-5.0.0/scss/button-group"; ////
+@import "bootstrap-5.0.0/scss/nav";
+@import "bootstrap-5.0.0/scss/navbar";
+// @import "bootstrap-5.0.0/scss/card";
+// @import "bootstrap-5.0.0/scss/accordion";
+// @import "bootstrap-5.0.0/scss/breadcrumb";
+@import "bootstrap-5.0.0/scss/pagination";
+@import "bootstrap-5.0.0/scss/badge";
+// @import "bootstrap-5.0.0/scss/alert";
+// @import "bootstrap-5.0.0/scss/progress";
+@import "bootstrap-5.0.0/scss/list-group";
+// @import "bootstrap-5.0.0/scss/close";
+// @import "bootstrap-5.0.0/scss/toasts";
+// @import "bootstrap-5.0.0/scss/modal";
+// @import "bootstrap-5.0.0/scss/tooltip";
+// @import "bootstrap-5.0.0/scss/popover";
+// @import "bootstrap-5.0.0/scss/carousel";
+@import "bootstrap-5.0.0/scss/spinners";
+
+// Helpers
+@import "bootstrap-5.0.0/scss/helpers";
+
+// Utilities
+@import "bootstrap-5.0.0/scss/utilities/api";
+

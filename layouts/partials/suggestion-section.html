@@ -1,0 +1,29 @@
+<div class="suggestion col-sm-12 col-md-6 col-lg-4">
+    {{ if .Params.image }}
+    <a href="{{ .RelPermalink }}">
+        <!-- This is a workaround for a Hugo bug -->
+        {{ $image := .Page.Resources.Match .Params.image }}
+        {{ $image := index $image 0 }}
+        {{/* $image := $image.Resize "500x" */}}
+        <img src={{ $image.RelPermalink }} alt="{{ .Title }}" loading="lazy">
+    </a>
+    {{ end }}
+
+    <div class="content">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+
+        <p class="summary">
+            <a href="{{ .RelPermalink }}">
+                {{ with .Description }}{{ . }}
+                {{ else }}{{ with .Summary }}{{ . | plainify | htmlUnescape }}
+                {{ end }}{{ end }}
+            </a>
+        </p>
+
+        <div class="tags">
+            {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}"><span class="tag bg-dark">{{ . }}</span></a>
+            {{ end }}
+        </div>
+    </div>
+</div>
