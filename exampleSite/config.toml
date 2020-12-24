@@ -1,11 +1,11 @@
-baseURL = "https://example.com/"
+baseURL = "https://example.com/blogra/"
 #CanonifyURLs=true
 pluralizeListTitles = false
 summaryLength   = 25
 
-theme           = "BlogRa"
+#theme          = "BlogRa"
 languageCode    = "en-us"
-title           = "BlogRa Theme"
+title           = "BlogRa"
 
 disqusShortname = ""
 googleAnalytics = ""
@@ -67,6 +67,7 @@ googleAnalytics = ""
         name = "Contact"
         url = "/contact/"
         weight = 4
+
 
 # Don't touch this
 [markup.goldmark.renderer]

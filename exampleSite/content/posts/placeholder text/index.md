@@ -3,7 +3,7 @@ title: "Placeholder Text"
 date: 2020-12-23
 description: "Lorem Ipsum Dolor Si Amet"
 tags: ["markdown", "text"]
-image: text.png
+image: blog.jpg
 ---
 
 Lorem est tota propiore conpellat pectoribus de
