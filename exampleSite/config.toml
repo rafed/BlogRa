@@ -3,7 +3,7 @@ baseURL = "https://example.com/blogra/"
 pluralizeListTitles = false
 summaryLength   = 25
 
-#theme          = "BlogRa"
+theme           = "BlogRa"
 languageCode    = "en-us"
 title           = "BlogRa"
 
