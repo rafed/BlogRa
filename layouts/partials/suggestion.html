@@ -20,9 +20,16 @@
 
         <p class="summary">
             <a href="{{ .RelPermalink }}">
-                {{ with .Description }}{{ . }}
-                {{ else }}{{ with .Summary }}{{ . | plainify | htmlUnescape }}
-                {{ end }}{{ end }}
+                {{ with .Description }}
+                    {{ . }}
+                {{ else }}
+                    {{ $s := .Summary | plainify | htmlUnescape }}
+                    {{ if not .Params.image }}
+                        {{ $s  }}
+                    {{ else }}
+                        {{ substr $s 0 120 }}...
+                    {{ end }}
+                {{ end }}
             </a>
         </p>
 
