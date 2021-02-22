@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="p-5" style="font-size: 9rem;">
+            404
+        </h1>
+
+        <div style="font-size:1.2rem">
+            <p>
+                Maybe this page moved?
+            </p>
+            <p>
+                Maybe it didn't exist in the first place?
+            </p>
+            <p>
+                Maybe it was deleted?
+            </p>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="bg-offwhite py-5">
+    <div class="container-md">
+        <div class="row">
+            {{/* $filteredPosts := where (where .Site.Pages "Type" "blog") "UniqueID" "!= ".UniqueID }}
+            {{ $relatedPosts := shuffle $filteredPosts | first 3 */}}
+
+            {{ $allPosts := where .Site.RegularPages ".Section" "in" (slice "posts" "sections") }}
+            {{ $randomPosts := shuffle $allPosts | first 6 }}
+            {{ $randomPosts := $randomPosts.ByDate.Reverse }}
+
+            {{ range $randomPosts }}
+            {{ partial "suggestion.html" . }}
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ end }}
