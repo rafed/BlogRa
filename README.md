@@ -2,7 +2,7 @@
 
 The Ultimate Tech Blogging Theme
 
-![thumbnail](https://github.com/rafed/BlogRa/blob/master/images/tn.png?raw=true)
+![thumbnail](images/tn.png)
 
 ## Features
 
