@@ -21,7 +21,7 @@
 
             {{ $latestPosts := where .Site.RegularPages ".Section" "in" (slice "posts" "sections") }}
             {{ $latestPosts = $latestPosts | symdiff $featured}}
-            {{ $latestPosts = $latestPosts.ByDate.Reverse }}
+            {{ $latestPosts = $latestPosts.ByDate.Reverse | first 6 }}
 
             {{ range $latestPosts }}
             {{ partial "suggestion.html" . }}
