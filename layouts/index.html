@@ -19,11 +19,11 @@
             {{/* $filteredPosts := where (where .Site.Pages "Type" "blog") "UniqueID" "!= ".UniqueID }}
             {{ $relatedPosts := shuffle $filteredPosts | first 3 */}}
 
-            {{ $allPosts := where .Site.RegularPages ".Section" "in" (slice "posts" "sections") }}
-            {{ $randomPosts := shuffle $allPosts | first 6 }}
-            {{ $randomPosts := $randomPosts.ByDate.Reverse }}
+            {{ $latestPosts := where .Site.RegularPages ".Section" "in" (slice "posts" "sections") }}
+            {{ $latestPosts = $latestPosts | symdiff $featured}}
+            {{ $latestPosts = $latestPosts.ByDate.Reverse }}
 
-            {{ range $randomPosts }}
+            {{ range $latestPosts }}
             {{ partial "suggestion.html" . }}
             {{ end }}
         </div>
