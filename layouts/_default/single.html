@@ -3,7 +3,14 @@
 <main class="blog-content">
     <div class="container-md">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 px-lg-4">
+            <!-- <div class="col-lg-8 offset-lg-2 px-lg-4"> -->
+            <div class="col-lg-2 d-none d-xl-block">
+                {{ partial "ads.html" "ads/vertical-ad.js"}}
+            </div>
+
+            <div class="col-md-12 col-lg-8 px-lg-4">
+                {{ partial "ads.html" "ads/horizontal-ad.js" }}
+
                 <h1 class="title">{{ .Title | title }}</h1>
 
                 <div class="container-fluid px-0 mb-4">
@@ -34,7 +41,13 @@
 
                 {{ partial "social-media-share.html" . }}
 
+                {{ partial "ads.html" "ads/horizontal-ad.js" }}
+
                 {{ partial "disqus.html" . }}
+            </div>
+
+            <div class="col-lg-2 d-none d-xl-block">
+                {{ partial "ads.html" "ads/vertical-box-ad.js"}}
             </div>
         </div>
     </div>
