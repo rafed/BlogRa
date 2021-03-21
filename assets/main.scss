@@ -113,3 +113,15 @@ $fa-font-path: "fonts/";
 main {
     min-height: 70vh;
 }
+
+.ad-left {
+    min-height: 200vh;
+    display: flex;
+    align-items: center;
+}
+
+.ad-right {
+    min-height: 300vh;
+    display: flex;
+    align-items: center;
+}
