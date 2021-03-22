@@ -114,14 +114,10 @@ main {
     min-height: 70vh;
 }
 
-.ad-left {
-    min-height: 200vh;
-    display: flex;
-    align-items: center;
+.ad-left-offset {
+    min-height: 120vh;
 }
 
-.ad-right {
-    min-height: 300vh;
-    display: flex;
-    align-items: center;
+.ad-right-offset {
+    min-height: 270vh;
 }
