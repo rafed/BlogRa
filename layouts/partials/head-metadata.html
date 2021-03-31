@@ -31,6 +31,9 @@
 <script data-ad-client="{{ .Site.Params.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{ end }}
 
+<!-- Google Analytics -->
+{{ template "_internal/google_analytics.html" . }}
+
 <!-- Katex math equations -->
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
