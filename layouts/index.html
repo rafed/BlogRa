@@ -42,9 +42,11 @@
 
         <div class="row">
             {{ $allPages := where .Site.Pages "Section" "sections" }}
-            {{ $contentPages := where .Site.RegularPages "Section" "sections" }}
+            {{ $contentPages_and_section := where .Site.RegularPages "Section" "sections" }}
+            {{ $contentPages := symdiff $allPages $contentPages_and_section }}
 
-            {{ $sections := symdiff $allPages $contentPages }}
+            {{ $sections := where $contentPages "Title" "!=" "Sections" }}
+
             {{ $randomSections := shuffle $sections | first 3 }}
 
             {{ range $randomSections }}
