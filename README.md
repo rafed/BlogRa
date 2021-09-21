@@ -29,6 +29,8 @@ The Ultimate Tech Blogging Theme
 
 ## Installation & Update
 
+You will need to download Hugo **extended versions** to build your site with this theme. Search and download it from the [releases](https://github.com/gohugoio/hugo/releases) page.
+
 ```
 $ # install
 $ mkdir themes

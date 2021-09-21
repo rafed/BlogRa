@@ -68,6 +68,8 @@ googleAnalytics = ""
         url = "/contact/"
         weight = 4
 
+[markup.goldmark.parser.attribute]
+    block = true
 
 # Don't touch this
 [markup.goldmark.renderer]
