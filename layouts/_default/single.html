@@ -34,7 +34,7 @@
                 {{ with .Page.Params.image }}
                 <figure>
                     {{ $image := $.Page.Resources.GetMatch . }}
-                    <img src={{ $image.RelPermalink }} alt="{{ $.Title }}">
+                    <img id="cover-image" src={{ $image.RelPermalink }} alt="{{ $.Title }}">
                 </figure>
                 {{ end }}
 
