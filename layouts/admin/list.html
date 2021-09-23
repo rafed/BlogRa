@@ -38,15 +38,22 @@
                     <td>{{ $postsLen }}</td>
                 </tr>
 
+                {{ $all_subection_pages := slice "" }}
+                {{range (.Paginate ( where .Site.RegularPages "Type" "sections") 10000).Pages}}
+                    {{ $all_subection_pages = $all_subection_pages | append .Parent }}
+                {{ end }}
+
+                {{ $sections := where (where .Site.Pages "Kind" "section") "Title" "not in" "Posts Admin Sections" }}
+
                 {{ $index := 2}}
-                {{ range where (where .Site.Pages "Kind" "section") "Title" "not in" "Posts Admin Sections" }}
-                {{ $pages_len := len (where .Site.RegularPages "Section" "in" "Title" )}}
-                <tr>
-                    <td>{{ $index }}</td>
-                    {{ $index = add $index 1}}
-                    <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
-                    <td>{{ $pages_len }}</td>
-                </tr>
+                {{ range sort $sections "Title" }}
+                    {{ $pages_len := len (where $all_subection_pages "Title" "==" .Title )}}
+                    <tr>
+                        <td>{{ $index }}</td>
+                        {{ $index = add $index 1}}
+                        <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+                        <td>{{ $pages_len }}</td>
+                    </tr>
                 {{ end }}
 
                 <tr>
