@@ -1,24 +1,79 @@
 {{ if .IsHome }}
-<meta name="description" content="{{ .Site.Params.Description }}">
+    <meta name="description" content="{{ .Site.Params.Description }}">
+    <meta property="og:description" content="{{ .Site.Params.Description }}" />
+
+    {{ if (fileExists "static/image/favicon.ico") -}}
+    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ end }}
 
 {{ else if eq .Kind "taxonomy" }}
-<meta name="description" content="Collection of all articles related to {{ .Title }}">
+    <meta name="description" content="List of all {{ .Title }}">
+    <meta property="og:description" content="List of all {{ .Title }}" />
 
-{{ else if eq .Kind "taxonomyTerm" }}
-<meta name="description" content="Collection of all tags in {{ .Site.Title }}">
+    {{ if (fileExists "static/image/favicon.ico") -}}
+    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ end }}
+
+{{ else if eq .Kind "term" }}
+    <meta name="description" content="Articles tagged &quot;{{ .Title }}&quot;">
+    <meta property="og:description" content="Articles tagged &quot;{{ .Title }}&quot;" />
+
+    {{ if (fileExists "static/image/favicon.ico") -}}
+    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ end }}
 
 {{ else if eq .Kind "section"}}
-<meta name="description" content="Collection of all articles in section- {{ .Title | humanize }}">
+    <meta name="description" content="All articles in &quot;{{ .Title }}&quot;">
+    <meta property="og:description" content="All articles in &quot;{{ .Title }}&quot;" />
+
+    {{ if .Params.image }}
+    {{ $image := .Resources.GetMatch .Params.image }}
+    <meta property="og:image" content="{{ $image.Permalink }}" />
+    {{ else if (fileExists "static/image/favicon.ico") -}}
+    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ end }}
 
 {{ else }}
 <meta name="description" content="
     {{ with .Description }}{{ . }}
-    {{ else }}{{ with .Summary }}{{ . }}
-    {{ else }}{{ .Site.Params.description }}
-    {{ end }}{{ end }}
-">
+    {{ else }}{{if .IsPage}}{{ .Summary }}
+    {{ else }}{{ with .Site.Params.description }}{{ . }}
+    {{ end }}{{ end }}{{ end }}"
+/>
+<meta property="og:description" content="
+    {{ with .Description }}{{ . }}
+    {{ else }}{{if .IsPage}}{{ .Summary }}
+    {{ else }}{{ with .Site.Params.description }}{{ . }}
+    {{ end }}{{ end }}{{ end }}" 
+/>
+{{ if .Params.image }}
+{{ $image := .Resources.GetMatch .Params.image }}
+<meta property="og:image" content="{{ $image.Permalink }}" />
+{{ else if (fileExists "static/image/favicon.ico") -}}
+<meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+{{ end }}
 {{ end }}
 
-{{ template "_internal/opengraph.html" . }}
+
+
+<!-- Open Graph META  -->
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+
+{{- if .IsPage }}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+<meta property="article:section" content="{{ .Section }}" />
+{{ with .PublishDate }}<meta property="article:published_time" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end }}
+{{ with .Lastmod }}<meta property="article:modified_time" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end }}
+{{- end -}}
+
+{{- with .Params.locale }}<meta property="og:locale" content="{{ . }}" />{{ end }}
+{{- with .Site.Params.title }}<meta property="og:site_name" content="{{ . }}" />{{ end }}
+
+
+<!-- Modified _internal/opengraph and placed above -->
+{{/* template "_internal/opengraph.html" . */}}
 {{ template "_internal/twitter_cards.html" . }}
 {{ template "_internal/schema.html" . }}
