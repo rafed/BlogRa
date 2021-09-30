@@ -2,24 +2,24 @@
     <meta name="description" content="{{ .Site.Params.Description }}">
     <meta property="og:description" content="{{ .Site.Params.Description }}" />
 
-    {{ if (fileExists "static/image/favicon.ico") -}}
-    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ if (fileExists "static/image/cover.png") -}}
+    <meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
     {{ end }}
 
 {{ else if eq .Kind "taxonomy" }}
     <meta name="description" content="List of all {{ .Title }}">
     <meta property="og:description" content="List of all {{ .Title }}" />
 
-    {{ if (fileExists "static/image/favicon.ico") -}}
-    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ if (fileExists "static/image/cover.png") -}}
+    <meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
     {{ end }}
 
 {{ else if eq .Kind "term" }}
     <meta name="description" content="Articles tagged &quot;{{ .Title }}&quot;">
     <meta property="og:description" content="Articles tagged &quot;{{ .Title }}&quot;" />
 
-    {{ if (fileExists "static/image/favicon.ico") -}}
-    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ if (fileExists "static/image/cover.png") -}}
+    <meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
     {{ end }}
 
 {{ else if eq .Kind "section"}}
@@ -29,8 +29,8 @@
     {{ if .Params.image }}
     {{ $image := .Resources.GetMatch .Params.image }}
     <meta property="og:image" content="{{ $image.Permalink }}" />
-    {{ else if (fileExists "static/image/favicon.ico") -}}
-    <meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+    {{ else if (fileExists "static/image/cover.png") -}}
+    <meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
     {{ end }}
 
 {{ else }}
@@ -49,8 +49,8 @@
 {{ if .Params.image }}
 {{ $image := .Resources.GetMatch .Params.image }}
 <meta property="og:image" content="{{ $image.Permalink }}" />
-{{ else if (fileExists "static/image/favicon.ico") -}}
-<meta property="og:image" content="{{ "image/favicon.ico" | absURL }}" />
+{{ else if (fileExists "static/image/cover.png") -}}
+<meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
 {{ end }}
 {{ end }}
 
