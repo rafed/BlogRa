@@ -56,16 +56,16 @@ languageCode    = "en-us"
 title           = "BlogRa Theme"
 
 disqusShortname = ""
-googleAnalytics = ""
 
 [params]
-    description  = "The Ultimate Tech Blogging Theme"
-    contactEmail = "your-email@domain.com"
-    footer       = ""
-    googleSearch = "google-cse-key"
-    adsense      = "adsense-key"
-    math         = false   # best to enable this in the front matter of a page
-    mermaid      = false   # best to enable this in the front matter of a page
+    description     = "The Ultimate Tech Blogging Theme"
+    contactEmail    = "your-email@domain.com"
+    footer          = ""
+    googleSearch    = "google-cse-key"
+    googleAnalytics = ""      # v4
+    adsense         = "adsense-key"
+    math            = false   # best to enable this in the front matter of a page
+    mermaid         = false   # best to enable this in the front matter of a page
 
     # Social Media Params
     facebook   = "https://www.facebook.com/DevHacker-2351204168278028"
