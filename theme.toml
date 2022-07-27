@@ -4,7 +4,7 @@ licenselink = "https://github.com/rafed/BlogRa/blob/master/LICENSE"
 description = "The Ultimate Tech Blogging Theme"
 homepage = "https://github.com/rafed/ramium/"
 tags = ["blog", "responsive", "google analytics", "disqus", "google search", "bootstrap", "fast", "social media share", "code", "math equations", "seo", "mermaid diagrams", "tech"]
-min_version = "0.79.0"
+min_version = "0.91.2"
 
 [author]
   name = "Rafed Muhammad Yasir"

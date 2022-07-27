@@ -9,13 +9,14 @@ The Ultimate Tech Blogging Theme
 #### Site features
 
 - Google search bar
-- Google Analytics
+- Google Analytics (v4)
 - Share bar below articles for sharing across social media
-- Add links to other presences on the web
+- Social links place holder for linking with different social media
 - Comments with Disqus
 - Customizable navbar
 - Mobile responsive- works great across desktops, tablets and mobiles
 - SEO friendly (Opengraph, Twitter cards)
+- Admin panel to see site summary (number of posts, tags, sections)
 
 #### Blogging features
 
@@ -62,7 +63,7 @@ disqusShortname = ""
     contactEmail    = "your-email@domain.com"
     footer          = ""
     googleSearch    = "google-cse-key"
-    googleAnalytics = ""      # v4
+    googleAnalytics = "G-A1B2C3D4E5" # v4
     adsense         = "adsense-key"
     math            = false   # best to enable this in the front matter of a page
     mermaid         = false   # best to enable this in the front matter of a page
@@ -128,9 +129,8 @@ disqusShortname = ""
 title: {{ replace .Name "-" " " | title }}
 date: {{ now.Format "2006-01-2" }}
 tags: [tag1, tag2]
-image: "/image/blog-pic.jpg"
-description: "A smalll description"
-showDate: true/false    # to enable/disable showing dates
+image: "blog-pic.png"
+description: "A smalll optional description"
 math: true              # to enable showing equations (katex)
 mermaid: true           # to add diagrams using mermaid
 ---
@@ -138,7 +138,7 @@ mermaid: true           # to add diagrams using mermaid
 
 ## Contributing
 
-If you find problems with the theme raise an issue. Also, contributions/pull requests are welcome.
+If you find problems in the theme submit an issue. Also, contributions/pull requests are welcome.
 
 ## LICENSE
 
