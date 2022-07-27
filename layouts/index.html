@@ -47,9 +47,9 @@
 
             {{ $sections := where $contentPages "Title" "!=" "Sections" }}
 
-            {{ $randomSections := shuffle $sections | first 3 }}
+            {{ $sections := $sections.ByDate.Reverse | first 3 }}
 
-            {{ range $randomSections }}
+            {{ range $sections }}
                 {{ if ne .Title "Sections" }}
                 {{ partial "suggestion-section.html" . }}
                 {{ end }}
