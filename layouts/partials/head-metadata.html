@@ -33,7 +33,7 @@
 
 <!-- Google Analytics -->
 {{ if not .Site.IsServer }}
-    {{ template "_internal/google_analytics.html" . }}
+    {{ partial "googleAnalytics.html" . }}
 {{ end }}
 
 <!-- Katex math equations -->
