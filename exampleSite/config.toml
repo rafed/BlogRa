@@ -74,3 +74,8 @@ disqusShortname = ""
 # Don't touch this
 [markup.goldmark.renderer]
     unsafe = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.91.2"

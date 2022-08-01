@@ -2,7 +2,7 @@ name = "BlogRa"
 license = "GPL"
 licenselink = "https://github.com/rafed/BlogRa/blob/master/LICENSE"
 description = "The Ultimate Tech Blogging Theme"
-homepage = "https://github.com/rafed/ramium/"
+homepage = "https://github.com/rafed/BlogRa"
 tags = ["blog", "responsive", "google analytics", "disqus", "google search", "bootstrap", "fast", "social media share", "code", "math equations", "seo", "mermaid diagrams", "tech"]
 min_version = "0.91.2"
 
