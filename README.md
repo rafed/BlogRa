@@ -4,6 +4,10 @@ The Ultimate Tech Blogging Theme
 
 ![thumbnail](images/tn.png)
 
+## Demo
+
+You can see live demo of this theme for my blog at [rafed.github.io/devra](https://rafed.github.io/devra).
+
 ## Features
 
 #### Site features
