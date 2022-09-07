@@ -4,7 +4,7 @@
 {{ $image := index $image 0 }}
 
 <div class="grid-item grid-item-{{ add .index 1 }}" 
-    style="background-image:url('{{ $image.RelPermalink }}')">
+    style="background-image:url('{{ $image.Permalink }}')">
 {{ else }}
 <div class="grid-item grid-item-{{ add .index 1 }}" 
     style="background-image:url('')">

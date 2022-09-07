@@ -1,5 +1,5 @@
 baseURL = "https://example.com/blogra/"
-#CanonifyURLs=true
+canonifyURLs=true
 pluralizeListTitles = false
 summaryLength   = 25
 
@@ -78,4 +78,4 @@ disqusShortname = ""
 [module]
   [module.hugoVersion]
     extended = true
-    min = "0.91.2"
+    min = "0.102.3"
