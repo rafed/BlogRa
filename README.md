@@ -2,7 +2,7 @@
 
 The Ultimate Tech Blogging Theme
 
-![thumbnail](images/tn.png)
+![thumbnail](https://github.com/rafed/blogra/blob/main/images/tn.png?raw=true)
 
 ## Demo
 
@@ -52,7 +52,7 @@ If you want to know more information, see [Hugo doc](https://gohugo.io/themes/in
 
 ```
 baseURL = "https://example.com/"
-#CanonifyURLs=true
+canonifyURLs=true
 pluralizeListTitles = false
 summaryLength   = 25
 
