@@ -7,10 +7,16 @@
                 <h1 class="title">{{ .Title | title }}</h1>
 
                 {{ with .Page.Params.image }}
-                <figure>
-                    {{ $image := $.Page.Resources.GetMatch . }}
-                    <img src={{ $image.RelPermalink }} alt="{{ $.Title }}">
-                </figure>
+                    {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+                        <figure>
+                            <img id="cover-image" src={{ . }} alt="{{ $.Title }}">
+                        </figure>
+                    {{ else }}
+                        <figure>
+                            {{ $image := $.Page.Resources.GetMatch . }}
+                            <img id="cover-image" src={{ $image.RelPermalink }} alt="{{ $.Title }}">
+                        </figure>
+                    {{ end }}
                 {{ end }}
 
                 {{ .Content }}

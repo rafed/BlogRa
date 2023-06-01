@@ -27,10 +27,16 @@
     <meta property="og:description" content="All articles in &quot;{{ .Title }}&quot;" />
 
     {{ if .Params.image }}
-    {{ $image := .Resources.GetMatch .Params.image }}
-    <meta property="og:image" content="{{ $image.Permalink }}" />
+        {{ $imageLink := "" }}
+        {{ if not (or (hasPrefix .Params.image "http://") (hasPrefix .Params.image "https://")) }}
+            {{ $image := .Resources.GetMatch .Params.image }}
+            {{ $imageLink = $image.Permalink }}
+        {{ else }}
+            {{ $imageLink = .Params.image }}
+        {{ end }}
+        <meta property="og:image" content="{{ $imageLink }}" />
     {{ else if (fileExists "static/image/cover.png") -}}
-    <meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
+        <meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
     {{ end }}
 
 {{ else }}
@@ -47,14 +53,18 @@
     {{ end }}{{ end }}{{ end }}" 
 />
 {{ if .Params.image }}
-{{ $image := .Resources.GetMatch .Params.image }}
-<meta property="og:image" content="{{ $image.Permalink }}" />
+    {{ $imageLink := "" }}
+    {{ if not (or (hasPrefix .Params.image "http://") (hasPrefix .Params.image "https://")) }}
+        {{ $image := .Resources.GetMatch .Params.image }}
+        {{ $imageLink = $image.Permalink }}
+    {{ else }}
+        {{ $imageLink = .Params.image }}
+    {{ end }}
+    <meta property="og:image" content="{{ $imageLink }}" />
 {{ else if (fileExists "static/image/cover.png") -}}
-<meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
+    <meta property="og:image" content="{{ "image/cover.png" | absURL }}" />
 {{ end }}
 {{ end }}
-
-
 
 <!-- Open Graph META  -->
 <meta property="og:title" content="{{ .Title }}" />

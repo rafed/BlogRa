@@ -1,13 +1,18 @@
 {{ if .context.Params.image }}
-<!-- This is a workaround for a Hugo bug -->
-{{ $image := $.context.Page.Resources.Match (.context.Params.image) }}
-{{ $image := index $image 0 }}
-
-<div class="grid-item grid-item-{{ add .index 1 }}" 
-    style="background-image:url('{{ $image.Permalink }}')">
+    {{ $imageLink := "" }}
+    {{ if or (hasPrefix .context.Params.image "http://") (hasPrefix .context.Params.image "https://") }}
+        {{ $imageLink = .context.Params.image }}
+    {{ else }}
+        <!-- This is a workaround for a Hugo bug -->
+        {{ $image := $.context.Page.Resources.Match (.context.Params.image) }}
+        {{ $image := index $image 0 }}
+        {{ $imageLink = $image.Permalink }}
+    {{ end }}
+    <div class="grid-item grid-item-{{ add .index 1 }}" 
+        style="background-image:url('{{ $imageLink }}')">
 {{ else }}
-<div class="grid-item grid-item-{{ add .index 1 }}" 
-    style="background-image:url('')">
+    <div class="grid-item grid-item-{{ add .index 1 }}" 
+        style="background-image:url('')">
 {{ end }}
     <div class="content">
         <div class="tags">
