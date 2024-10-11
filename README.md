@@ -37,12 +37,16 @@ You can see live demo of this theme for my blog at [rafed.github.io/devra](https
 You will need to download Hugo **extended versions** to build your site with this theme. Search and download it from the [releases](https://github.com/gohugoio/hugo/releases) page.
 
 ```
-$ # install
-$ mkdir themes
-$ cd themes
-$ git submodule add https://github.com/rafed/BlogRa.git BlogRa
+$ # create directory for the blog
+$ mkdir site & cd site
+$ 
+$ git submodule add https://github.com/rafed/BlogRa.git themes/BlogRa
+$ echo "theme = 'BlogRa'" >> config.toml
+```
 
-$ # update
+To get updated theme run
+
+```
 $ git submodule update --remote --merge
 ```
 
