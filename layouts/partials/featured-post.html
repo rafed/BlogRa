@@ -17,7 +17,7 @@
     <div class="content">
         <div class="tags">
             {{ range .context.Params.tags }}
-            <a class="tag bg-dark" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            <a class="tag bg-dark" href="{{ (print "tags/" (. | urlize) | relURL) }}">{{ . }}</a>
             {{ end }}
         </div>
 

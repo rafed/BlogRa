@@ -34,7 +34,7 @@
                 <tr>
                     <td>1</td>
                     {{ $postsLen := len (where .Site.RegularPages ".Section" "==" "posts") }}
-                    <td><a href="{{ "/posts/" | relURL }}">Posts</a></td>
+                    <td><a href="{{ "posts/" | relURL }}">Posts</a></td>
                     <td>{{ $postsLen }}</td>
                 </tr>
 
@@ -51,7 +51,7 @@
                     <tr>
                         <td>{{ $index }}</td>
                         {{ $index = add $index 1}}
-                        <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+                        <td><a href="{{ .RelPermalink | absURL }}">{{ .Title }}</a></td>
                         <td>{{ $pages_len }}</td>
                     </tr>
                 {{ end }}
@@ -76,7 +76,7 @@
                 <tr>
                     <td>{{ $index }}</td>
                     {{ $index = add $index 1}}
-                    <td><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></td>
+                    <td><a href="{{ "tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></td>
                     <td>{{ len $taxonomy }}</td>
                 </tr>
                 {{ end }}

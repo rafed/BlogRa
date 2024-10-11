@@ -16,7 +16,7 @@
 
                 {{ range $name, $taxonomy := $.Site.Taxonomies.tags}}
                     {{ $names = $names | append $name }}
-                    {{ $url = $url | append (printf "/tags/%s" $name | relURL) }}
+                    {{ $url = $url | append (printf "tags/%s" $name | relURL) }}
                     {{ $count = $count | append .Count }}
                 {{ end }}
                 

@@ -1,5 +1,4 @@
 baseURL = "https://example.com/blogra/"
-canonifyURLs=true
 pluralizeListTitles = false
 summaryLength   = 25
 
@@ -21,9 +20,9 @@ disqusShortname = ""
 
     # Social Media Params
     facebook   = "https://www.facebook.com/DevHacker-2351204168278028"
-    twitter    = ""
+    twitter    = "https://x.com/rafedyasir"
     youtube    = "https://www.youtube.com/channel/UC6uDg4IlPbLh2xNKrqnBczw"
-    instagram  = ""
+    instagram  = "https://www.instagram.com/rafedyasir/"
     github     = "https://github.com/rafed"
     pinterest  = ""
     linkedin   = "https://www.linkedin.com/in/rafed-m-yasir/"

@@ -24,7 +24,7 @@
 
                         <div class="col-md-8 tags ">
                             {{ range .Params.tags }}
-                            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}"><span
+                            <a href="{{ (print "tags/" (. | urlize) | relURL) }}"><span
                                     class="tag bg-dark">{{ . }}</span></a>
                             {{ end }}
                         </div>
