@@ -69,7 +69,7 @@ disqusShortname = ""
 [params]
     description     = "The Ultimate Tech Blogging Theme"
     contactEmail    = "your-email@domain.com"
-    footer          = "https://x.com/rafedyasir"
+    footer          = ""
     googleSearch    = "google-cse-key"
     googleAnalytics = "G-A1B2C3D4E5" # v4
     adsense         = "adsense-key"
@@ -78,7 +78,7 @@ disqusShortname = ""
 
     # Social Media Params
     facebook   = "https://www.facebook.com/DevHacker-2351204168278028"
-    twitter    = ""
+    twitter    = "https://x.com/rafedyasir"
     youtube    = "https://www.youtube.com/channel/UC6uDg4IlPbLh2xNKrqnBczw"
     instagram  = "https://www.instagram.com/rafedyasir/"
     github     = "https://github.com/rafed"
